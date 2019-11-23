@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+  		<title>Entitaetsdetails</title>
+
+		<link rel="stylesheet" href="../static/CSS/navigation_bar.css" type="text/css">
+	</head>
+
+	<body>
+		{% include "header.html" %}
+		<div class="bar">
+		</div>
+		<ul class="navbar">
+			<li><a href="index.html">Home</a></li>
+			{% if graph_name %}
+				<li><a href="/recom/{{ graph_name }}">Graphuebersicht</a></li>
+			{% endif %}
+		</ul>
+	</body>
+</html>

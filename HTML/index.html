@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+  	<title>Therappy</title>
+		<link rel="stylesheet" href="../static/CSS/body.css" type="text/css">
+		<link rel="stylesheet" href="../static/CSS/dropdown.css" type="text/css">
+		<link rel="stylesheet" href="../static/CSS/button.css" type="text/css">
+		<link rel="stylesheet" href="../static/CSS/datagrid.css" type="text/css">
+		<link rel="stylesheet" href="../static/CSS/navigation_bar.css" type="text/css">
+	</head>
+
+	<body>
+
+		<!-- Header-Daten -->
+		<!-- TODO: In eigenes Html oder ähnliches auslagen -->
+		<div class="header" style="position:fixed;margin-left:0;left:0;top:0;height:8.3%;">
+				<img src="../static/images/logo_example.png"/>
+		</div>
+
+		<!-- Navigationsbar-Daten -->
+		<!-- TODO: In eigenes Html oder ähnliches auslagern -->
+		<div class="bar">
+		</div>
+		<ul class="navbar">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="termine.html">Termine</a></li>
+			<li><a href="datenverwaltung.html">Datenverwaltung</a></li>
+		</ul>
+
+		<!-- Inhalt der Startseite -->
+		<div class="content">
+			<h1>Nachrichten</h1>
+			<div>
+				<p style="border:none;background:none;margin-left:25%;">Hier könnten evtl. verschiedene Nachrichten und Veränderungen angezeigt werden</p>
+			</div>
+			<h1>Monatsübersicht </h1>
+			<div>
+				<p style="border:none;background:none;margin-left:25%;">Monat:</p>
+			</div>
+			<div class="select">
+					<select class="with_arrow" id="month_list">
+					</select>
+			</div>
+			<div class="datagrid" id="overview_data">
+					<table>
+						<thead>
+							<tr>
+								<th>Therapeut</th>
+								<th>Anzahl Termin</th>
+								<th>Anzahl Therapieformen</th>
+								<th>Anzahl Zeiteinheiten</th>
+							</tr>
+						</thead>
+						<tr>
+							<td>Chris</td>
+							<td>30</td>
+							<td>1</td>
+							<td>40</td>
+						</tr>
+						<tr>
+							<td>Patrick</td>
+							<td>10</td>
+							<td>1</td>
+							<td>30</td>
+						</tr>
+						<tr>
+							<td>Marco</td>
+							<td>50</td>
+							<td>5</td>
+							<td>50</td>
+						</tr>
+						<tr>
+							<td>Dennis</td>
+							<td>5</td>
+							<td>1</td>
+							<td>10</td>
+						</tr>
+					</table>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			window.onload = fill_month_list;
+
+			var ml = document.getElementById("month_list");
+			ml.onchange = function() {
+				changeMonthData();
+			};
+
+
+			function fill_month_list() {
+				var ml = document.getElementById("month_list");
+
+				// Lösche alle Einträge
+				while(ml.options.length > 0){
+					ml.options.remove(0)
+				};
+
+				for (i = 1; i <= 12; i++){
+					var option=document.createElement("option");
+					switch(i){
+						case 1:
+							option.text = "Januar"; break;
+						case 2:
+							option.text = "Februar"; break;
+						case 3:
+							option.text = "März"; break;
+						case 4:
+							option.text = "April"; break;
+						case 5:
+							option.text = "Mai"; break;
+						case 6:
+							option.text = "Juni"; break;
+						case 7:
+							option.text = "Juli"; break;
+						case 8:
+							option.text = "August"; break;
+						case 9:
+							option.text = "September"; break;
+						case 10:
+							option.text = "Oktober"; break;
+						case 11:
+							option.text = "November"; break;
+						case 12:
+							option.text = "Dezember"; break;
+					};
+					option.value=i;
+					ml.options.add(option,null);
+				};
+			};
+
+			function changeMonthData(){
+				// Extrahiere selektierten Monat
+				var ml = document.getElementById("month_list");
+				var current_month = ml.options[ml.selectedIndex];
+				var current_month_text = current_month.text;
+				console.log(current_month_text);
+			};
+		</script>
+	</body>
+</html>
+
+<!-- Beispiel Link -->
+<!--li><a href="../path/file.html/>Anzeigetext</a></li-->
+
+<!-- Beispiel für ein Selket-Objekt -->
+<!--div class="select">
+	<select class="with_arrow" id="recom_input" name='recom_basis' onchange="changeRecomInput">
+		<option value="0" selected>Mitarbeiternummer</option>
+		<option value="1">Organisationseinheit</option>
+	</select>
+</div-->
+
+<!-- javascript-Beispiele -->
+
+<!-- onchange-Listener
+var se = document.getElementById("select_element");
+se.onchange = function() {
+	tu etwas
+}; -->
+
+<!-- erhalte Wert aus Selekt
+var sl = document.getElementById("select_list");
+var current_predicate = pl.options[pl.selectedIndex];
+var current_text = current_predicate.text
+-->
