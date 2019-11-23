@@ -1,0 +1,77 @@
+/* Definition fuer Dropdown-Listen */
+.select {
+	width:
+		25%;
+	height:
+		3em;
+	overflow:
+		hidden;
+	border-radius:
+		.25em;
+	margin-left:
+		37%;
+}
+
+select {
+
+/* styling */
+	width:
+		100%;
+	height:
+		100%;
+	background-color:
+		rgb(139,137,137):
+  	border:
+		0;
+  	display:
+		inline-block;
+  	font:
+		inherit;
+  	line-height:
+		1.5em;
+	padding:
+		0 0 0 .5em;
+
+/* reset */
+	margin:
+		0;
+	-webkit-box-sizing:
+		border-box;
+	-moz-box-sizing:
+		border-box;
+	box-sizing:
+		border-box;
+	-webkit-appearance:
+		none;
+	-moz-appearance:
+		none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+/* arrows */
+select.with_arrow {
+	background-image:
+		linear-gradient(45deg, transparent 50%, black),
+		linear-gradient(135deg, black, transparent 50%),
+		linear-gradient(to right, #DE8230, #DE8230);
+	background-position:
+		calc(100% - 20px) calc(1em + 2px),
+		calc(100% - 15px) calc(1em + 2px),
+		100% 0;
+	background-size:
+		7px 7px,
+		7px 7px,
+		3em 3em;
+	background-repeat:
+		no-repeat;
+}
+
+select.with_arrow:hover {
+	background-image:
+		linear-gradient(45deg, transparent 50%, #F39C12),
+		linear-gradient(135deg, #F39C12, transparent 50%),
+		linear-gradient(to right, #DE8230, #DE8230);
+}
