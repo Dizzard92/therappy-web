@@ -1,6 +1,9 @@
-window.onload = fill_month_list;
+window.onload = function() {
+	var ml = document.getElementById("month_list");
+	fill_month_list;
+}	
 
-var ml = document.getElementById("month_list");
+
 ml.onchange = function() {
 	changeMonthData();
 };

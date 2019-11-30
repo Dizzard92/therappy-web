@@ -15,12 +15,6 @@ var config = {
   "projectId": "iamphysiotherappy-17757",
   "storageBucket": "iamphysiotherappy-17757.appspot.com"
 };
-firebase.initializeApp(config);
-
-var db = firebase.firestore();
-
-const inputTextField = document.querySelector("testtext");
-const saveButton = document.querySelector("saveButton");
 
 /* db.collection("Nutzer").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
@@ -28,12 +22,18 @@ const saveButton = document.querySelector("saveButton");
     });
 }); */
 
-saveButton.addEventListener("click", function() {
-	const textToSave = inputTextField.value;
-	console.log("Folgender Text wird gespeichert " + textToSave);
-	db.collection("Nutzer").get().then((querySnapshot) => {
-		querySnapshot.forEach((doc) => {
-			console.log(`${doc.id} => ${doc.data()}`);
+window.onload = function() {
+	firebase.initializeApp(config);
+	var db = firebase.firestore();
+	const inputTextField = document.querySelector("testtext");
+	const saveButton = document.querySelector("saveButton");
+	saveButton.addEventListener("click", function() {
+		const textToSave = inputTextField.value;
+		console.log("Folgender Text wird gespeichert " + textToSave);
+		db.collection("Nutzer").get().then((querySnapshot) => {
+			querySnapshot.forEach((doc) => {
+				console.log(`${doc.id} => ${doc.data()}`);
+			});
 		});
 	});
-});
+}	
