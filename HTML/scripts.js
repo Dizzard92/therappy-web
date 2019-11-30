@@ -13,11 +13,11 @@ firebase.require("firebase/firestore");
 
 var db = firebase.firestore();
 
-db.collection("Nutzer").get().then((querySnapshot) => {
+/* db.collection("Nutzer").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
     });
-});
+}); */
 
 saveButton.addEventListener("click", function() {
 	const textToSave = inputTextField.value;
