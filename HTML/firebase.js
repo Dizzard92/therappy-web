@@ -22,7 +22,7 @@ var config = {
     });
 }); */
 
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() { 
 	console.log("test_firebase");
 	firebase.initializeApp(config);
 	var db = firebase.firestore();
