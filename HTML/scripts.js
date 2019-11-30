@@ -1,8 +1,8 @@
 //Firebase Zeugs
-const firebase = require("firebase");
+firebase.require("firebase/firestore");
 
 // Required for side-effects
-require("firebase/firestore");
+//require("firebase/firestore");
 
 // Initialize Cloud Firestore through Firebase
 /* firebase.initializeApp({
