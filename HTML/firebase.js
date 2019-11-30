@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const outputHeader = document.querySelector("#dbtest");
 	const saveButton = document.querySelector("#saveButton");
   const loadButton = document.querySelector("#loadButton");
+  const allButton = document.querySelector("#allButton");
   const docRef = db.doc("Nutzer/Person");
 
   //In DB speichern
@@ -46,6 +47,16 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }).catch(function(error) {
       console.log("Fehler: ", error);
+    });
+  });
+
+  //ALle Einträge ausgeben erstmal in Konsole
+  allButton.addEventListener("click", function() {
+    db.collection("Nutzer").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
     });
   });
 });
