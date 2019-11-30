@@ -1,4 +1,5 @@
 window.onload = function() {
+	console.log("test");
 	var ml = document.getElementById("month_list");
 	fill_month_list;
 };	

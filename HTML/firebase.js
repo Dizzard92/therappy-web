@@ -23,6 +23,7 @@ var config = {
 }); */
 
 window.onload = function() {
+	console.log("test");
 	firebase.initializeApp(config);
 	var db = firebase.firestore();
 	const inputTextField = document.querySelector("testtext");
