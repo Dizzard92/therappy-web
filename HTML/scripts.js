@@ -28,18 +28,22 @@ const saveButton = document.querySelector("saveButton");
     });
 }); */
 
-saveButton.addEventListener("click", function() {
+
+		
+//---------Ab hier der alte Kram------------------------------
+window.onload = function(){
+	fill_month_list;
+	
+	saveButton.addEventListener("click", function() {
 	const textToSave = inputTextField.value;
 	console.log("Folgender Text wird gespeichert " + textToSave);
 	db.collection("Nutzer").get().then((querySnapshot) => {
-		querySnapshot.forEach((doc) => {
-			console.log(`${doc.id} => ${doc.data()}`);
+			querySnapshot.forEach((doc) => {
+				console.log(`${doc.id} => ${doc.data()}`);
+			});
 		});
 	});
-});
-		
-//---------Ab hier der alte Kram------------------------------
-window.onload = fill_month_list;
+}
 
 var ml = document.getElementById("month_list");
 ml.onchange = function() {
