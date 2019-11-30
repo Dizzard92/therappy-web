@@ -19,6 +19,9 @@ firebase.initializeApp(config);
 
 var db = firebase.firestore();
 
+const inputTextField = document.querySelector("testtext");
+const saveButton = document.querySelector("saveButton");
+
 db.collection("Nutzer").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
