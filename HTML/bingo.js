@@ -1,5 +1,5 @@
 window.onload = function() {
-	console.log("test");
+	console.log("test_bingo");
 	var ml = document.getElementById("month_list");
 	fill_month_list;
 };	
