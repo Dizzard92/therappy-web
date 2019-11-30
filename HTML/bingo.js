@@ -3,10 +3,10 @@ window.onload = function() {
 	fill_month_list;
 };	
 
-var ml = document.getElementById("month_list");
+/* var ml = document.getElementById("month_list");
 ml.onchange = function() {
 	changeMonthData();
-};
+}; */
 
 function fill_month_list() {
 	var ml = document.getElementById("month_list");
