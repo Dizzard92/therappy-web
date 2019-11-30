@@ -23,9 +23,10 @@ saveButton.addEventListener("click", function() {
 	const textToSave = inputTextField.value;
 	console.log("Folgender Text wird gespeichert " + textToSave);
 	db.collection("Nutzer").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
-    });
+		querySnapshot.forEach((doc) => {
+			console.log(`${doc.id} => ${doc.data()}`);
+		});
+	});
 });
 		
 //---------Ab hier der alte Kram------------------------------
