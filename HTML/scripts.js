@@ -1,15 +1,21 @@
 //Firebase Zeugs
-const firebase = require("firebase");
+/* const firebase = require("firebase");
 
 // Required for side-effects
-require("firebase/firestore");
+require("firebase/firestore"); */
 
 // Initialize Cloud Firestore through Firebase
-/* firebase.initializeApp({
-  apiKey: 'AIzaSyAUHFqNblYKWTCrje07bkdNeorlQ4IuNEs',
-  authDomain: 'iamphysiotherappy-17757.firebaseapp.com',
-  projectId: 'iamphysiotherappy-17757'
-}); */
+var config = {
+  "apiKey": "AIzaSyAUHFqNblYKWTCrje07bkdNeorlQ4IuNEs",
+  "appId": "1:728300584033:web:ed2bf8534da27bacc53e20",
+  "authDomain": "iamphysiotherappy-17757.firebaseapp.com",
+  "databaseURL": "https://iamphysiotherappy-17757.firebaseio.com",
+  "measurementId": "G-SR5XN6N10J",
+  "messagingSenderId": "728300584033",
+  "projectId": "iamphysiotherappy-17757",
+  "storageBucket": "iamphysiotherappy-17757.appspot.com"
+});
+firebase.initializeApp(config);
 
 var db = firebase.firestore();
 
