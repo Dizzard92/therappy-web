@@ -1,3 +1,26 @@
+//Firebase Zeugs
+const firebase = require("firebase");
+
+// Required for side-effects
+require("firebase/firestore");
+
+// Initialize Cloud Firestore through Firebase
+firebase.initializeApp({
+  apiKey: 'AIzaSyAUHFqNblYKWTCrje07bkdNeorlQ4IuNEs',
+  authDomain: 'iamphysiotherappy-17757.firebaseapp.com',
+  projectId: 'iamphysiotherappy-17757'
+});
+
+var db = firebase.firestore();
+
+db.collection("Nutzer").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+    });
+});
+
+
+//---------Ab hier der alte Kram------------------------------
 window.onload = fill_month_list;
 
 var ml = document.getElementById("month_list");
