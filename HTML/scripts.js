@@ -14,7 +14,7 @@ var config = {
   "messagingSenderId": "728300584033",
   "projectId": "iamphysiotherappy-17757",
   "storageBucket": "iamphysiotherappy-17757.appspot.com"
-});
+};
 firebase.initializeApp(config);
 
 var db = firebase.firestore();
