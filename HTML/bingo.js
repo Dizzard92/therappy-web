@@ -1,12 +1,13 @@
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() { 
 	console.log("test_bingo");
 	fill_month_list;
-};	
+	console.log("test_bingo2");
+});	
 
-/* var ml = document.getElementById("month_list");
+var ml = document.getElementById("month_list");
 ml.onchange = function() {
 	changeMonthData();
-}; */
+}; 
 
 function fill_month_list() {
 	var ml = document.getElementById("month_list");
