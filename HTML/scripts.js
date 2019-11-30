@@ -5,11 +5,11 @@ const firebase = require("firebase");
 require("firebase/firestore");
 
 // Initialize Cloud Firestore through Firebase
-firebase.initializeApp({
+/* firebase.initializeApp({
   apiKey: 'AIzaSyAUHFqNblYKWTCrje07bkdNeorlQ4IuNEs',
   authDomain: 'iamphysiotherappy-17757.firebaseapp.com',
   projectId: 'iamphysiotherappy-17757'
-});
+}); */
 
 var db = firebase.firestore();
 
