@@ -28,6 +28,7 @@ window.onload = function() {
 	var db = firebase.firestore();
 	const inputTextField = document.querySelector("testtext");
 	const saveButton = document.querySelector("saveButton");
+	console.log(saveButton);
 	saveButton.addEventListener("click", function() {
 		const textToSave = inputTextField.value;
 		console.log("Folgender Text wird gespeichert " + textToSave);
