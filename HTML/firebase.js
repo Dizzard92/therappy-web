@@ -1,9 +1,3 @@
-//Firebase Zeugs
-/* const firebase = require("firebase");
-
-// Required for side-effects
-require("firebase/firestore"); */
-
 // Initialize Cloud Firestore through Firebase
 var config = {
   "apiKey": "AIzaSyAUHFqNblYKWTCrje07bkdNeorlQ4IuNEs",
@@ -16,26 +10,42 @@ var config = {
   "storageBucket": "iamphysiotherappy-17757.appspot.com"
 };
 
-/* db.collection("Nutzer").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
-    });
-}); */
-
-document.addEventListener("DOMContentLoaded", function() { 
-	console.log("test_firebase");
+//Wenn Website geladen
+document.addEventListener("DOMContentLoaded", function() {
 	firebase.initializeApp(config);
 	var db = firebase.firestore();
 	const inputTextField = document.querySelector("#testtext");
+  const outputHeader = document.querySelector("#dbtest");
 	const saveButton = document.querySelector("#saveButton");
-	console.log(saveButton);
+  const loadButton = document.querySelector("#loadButton");
+  const docRef = db.doc("Nutzer/Person");
+
+  //In DB speichern
 	saveButton.addEventListener("click", function() {
 		const textToSave = inputTextField.value;
-		console.log("Folgender Text wird gespeichert " + textToSave);
-		db.collection("Nutzer").get().then((querySnapshot) => {
-			querySnapshot.forEach((doc) => {
-				console.log(`${doc.id} => ${doc.data()}`);
-			});
-		});
+		console.log("Folgender Name wird gespeichert " + textToSave);
+		db.collection("Nutzer").add({
+        Vorname: textToSave,
+    }).then(function(docRef) {
+        console.log("Name gespeichert mit ID: ", docRef.id);
+    }).catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
 	});
-});	
+
+  //Von DB laden
+  loadButton.addEventListener("click", function() {
+    const textToLoad = inputTextField.value;
+    console.log("Folgender Text wird geladen " + textToLoad);
+    db.collection("Nutzer").where("Vorname", "==", textToLoad)
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
+    }).catch(function(error) {
+      console.log("Fehler: ", error);
+    });
+  });
+});
