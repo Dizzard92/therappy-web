@@ -1,8 +1,8 @@
 //Firebase Zeugs
-firebase.require("firebase/firestore");
+const firebase = require("firebase");
 
 // Required for side-effects
-//require("firebase/firestore");
+require("firebase/firestore");
 
 // Initialize Cloud Firestore through Firebase
 /* firebase.initializeApp({
@@ -13,11 +13,11 @@ firebase.require("firebase/firestore");
 
 var db = firebase.firestore();
 
-/* db.collection("Nutzer").get().then((querySnapshot) => {
+db.collection("Nutzer").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
     });
-}); */
+});
 
 saveButton.addEventListener("click", function() {
 	const textToSave = inputTextField.value;
