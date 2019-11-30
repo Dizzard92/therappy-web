@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	console.log("test_firebase");
 	firebase.initializeApp(config);
 	var db = firebase.firestore();
-	const inputTextField = document.querySelector("testtext");
-	const saveButton = document.querySelector("saveButton");
+	const inputTextField = document.querySelector("#testtext");
+	const saveButton = document.querySelector("#saveButton");
 	console.log(saveButton);
 	saveButton.addEventListener("click", function() {
 		const textToSave = inputTextField.value;
