@@ -2,13 +2,11 @@ window.onload = function() {
 	console.log("test_bingo");
 	var ml = document.getElementById("month_list");
 	fill_month_list;
-};	
-
-
-ml.onchange = function() {
+	
+	ml.onchange = function() {
 	changeMonthData();
-};
-
+	};
+};	
 
 function fill_month_list() {
 	var ml = document.getElementById("month_list");
