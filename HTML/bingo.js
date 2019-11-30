@@ -1,7 +1,7 @@
 window.onload = function() {
 	var ml = document.getElementById("month_list");
 	fill_month_list;
-}	
+};	
 
 
 ml.onchange = function() {
